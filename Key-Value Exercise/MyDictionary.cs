@@ -43,8 +43,9 @@ namespace Key_Value_Exercise
                 if(!exists)
                 {
                     _keyValueArray[Count+1] = new KeyValue(key,value);
+                    Count++;
                 }
-                Count++;
+                
             }
         }
 

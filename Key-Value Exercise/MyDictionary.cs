@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Key_Value_Exercise
 {
-    class MyDictionary
+    class MyDictionary<T>
     {
         private int Count = -1;
 
-        private KeyValue[] _keyValueArray = new KeyValue[50];
+        private KeyValue<T>[] _keyValueArray = new KeyValue<T>[50];
 
-        public Object this[string key]
+        public T this[string key]
         {
             get
             {
@@ -22,7 +22,7 @@ namespace Key_Value_Exercise
                 }
                 for (int i = 0; i < _keyValueArray.Length; i++)
                 {
-                    if(_keyValueArray[i].Key==key)
+                    if(_keyValueArray[i].Key.Equals(key))
                     {
                         return _keyValueArray[i].Value;
                     }
@@ -34,15 +34,15 @@ namespace Key_Value_Exercise
                 bool exists = false;
                 for (int i = 0; i < Count; i++)
                 {
-                    if(_keyValueArray[i].Key==key)
+                    if(_keyValueArray[i].Key.Equals(key))
                     {
-                        _keyValueArray[i] = new KeyValue(key, _keyValueArray[i].Value);
+                        _keyValueArray[i] = new KeyValue<T>(key, _keyValueArray[i].Value);
                         exists = true;
                     }
                 }
                 if(!exists)
                 {
-                    _keyValueArray[Count+1] = new KeyValue(key,value);
+                    _keyValueArray[Count+1] = new KeyValue<T>(key,value);
                     Count++;
                 }
                 

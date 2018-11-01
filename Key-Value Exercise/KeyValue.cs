@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Key_Value_Exercise
 {
-    struct KeyValue
+    struct KeyValue<T>
     {
         public string Key { get; }
-        public Object Value { get; }
-        public KeyValue(string Key, Object Value)
+        public T Value { get; }
+        public KeyValue(string Key, T Value)
         {
             this.Key = Key;
             this.Value = Value;

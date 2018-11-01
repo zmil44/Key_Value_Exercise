@@ -10,7 +10,7 @@ namespace Key_Value_Exercise
     {
         static void Main(string[] args)
         {
-            var d = new MyDictionary();
+            var d = new MyDictionary<int>();
             try
             {
                 Console.WriteLine(d["Cats"]);
@@ -21,7 +21,7 @@ namespace Key_Value_Exercise
             }
             d["Cats"] = 42;
             d["Dogs"] = 17;
-            Console.WriteLine($"{(int)d["Cats"]}, { (int)d["Dogs"]}");
+            Console.WriteLine($"{d["Cats"]}, {d["Dogs"]}");
         }
     }
 }
